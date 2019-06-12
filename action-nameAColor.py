@@ -34,7 +34,7 @@ def action_wrapper(hermes, intent_message, conf):
     Refer to the documentation for further details. 
     """
 
-    file = open(os.path.dirname(os.path.realpath(__file__)) + "/witze.txt")
+    file = open(os.path.dirname(os.path.realpath(__file__)) + "/someNiceThings.txt")
     result_sentence = random_line(file)
     file.close()
 
@@ -44,5 +44,5 @@ def action_wrapper(hermes, intent_message, conf):
 
 if __name__ == "__main__":
     with Hermes("localhost:1883") as h:
-        h.subscribe_intent("DANBER:tellJoke", subscribe_intent_callback) \
+        h.subscribe_intent("hansdereber:nameAColor", subscribe_intent_callback) \
             .start()
